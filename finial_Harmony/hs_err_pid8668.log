@@ -1,0 +1,246 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 266338304 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3825), pid=8668, tid=35624
+#
+# JRE version:  (17.0.10+1) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.10+1-b1087.17, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=GBK D:\Homeng\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\openharmony\toolchains\lib\app_packing_tool.jar --mode hap --force true --lib-path D:\Code\Harmony3\entry\build\default\intermediates\stripped_native_libs\default --json-path D:\Code\Harmony3\entry\build\default\intermediates\package\default\module.json --resources-path D:\Code\Harmony3\entry\build\default\intermediates\res\default\resources --index-path D:\Code\Harmony3\entry\build\default\intermediates\res\default\resources.index --pack-info-path D:\Code\Harmony3\entry\build\default\outputs\default\pack.info --out-path D:\Code\Harmony3\entry\build\default\outputs\default\entry-default-unsigned.hap --ets-path D:\Code\Harmony3\entry\build\default\intermediates\loader_out\default\ets
+
+Host: 11th Gen Intel(R) Core(TM) i5-11320H @ 3.20GHz, 8 cores, 15G,  Windows 11 , 64 bit Build 22621 (10.0.22621.3958)
+Time: Tue Aug 27 12:51:55 2024  Windows 11 , 64 bit Build 22621 (10.0.22621.3958) elapsed time: 0.016558 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000193033e43a0):  JavaThread "Unknown thread" [_thread_in_vm, id=35624, stack(0x0000002adbe00000,0x0000002adbf00000)]
+
+Stack: [0x0000002adbe00000,0x0000002adbf00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x688ac9]
+V  [jvm.dll+0x84220a]
+V  [jvm.dll+0x843e4e]
+V  [jvm.dll+0x8444b3]
+V  [jvm.dll+0x24ba8f]
+V  [jvm.dll+0x685899]
+V  [jvm.dll+0x67a14a]
+V  [jvm.dll+0x30c7eb]
+V  [jvm.dll+0x313c96]
+V  [jvm.dll+0x363a2e]
+V  [jvm.dll+0x363c5f]
+V  [jvm.dll+0x2e25b8]
+V  [jvm.dll+0x2e3524]
+V  [jvm.dll+0x812d71]
+V  [jvm.dll+0x3718e1]
+V  [jvm.dll+0x7f18d6]
+V  [jvm.dll+0x3f553f]
+V  [jvm.dll+0x3f7171]
+C  [jli.dll+0x528f]
+C  [ucrtbase.dll+0x29333]
+C  [KERNEL32.DLL+0x1257d]
+C  [ntdll.dll+0x5af28]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffb3d85ef58, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001930344e9f0 GCTaskThread "GC Thread#0" [stack: 0x0000002adbf00000,0x0000002adc000000] [id=21476]
+  0x000001930345f5d0 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000002adc000000,0x0000002adc100000] [id=43564]
+  0x000001930345fff0 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000002adc100000,0x0000002adc200000] [id=44064]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffb3d013187]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000193033ddd50] Heap_lock - owner thread: 0x00000193033e43a0
+
+Heap address: 0x0000000703600000, size: 4042 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000703600000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+ Metaspace       used 0K, committed 0K, reserved 0K
+  class space    used 0K, committed 0K, reserved 0K
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, OA=open archive, CA=closed archive, TAMS=top-at-mark-start (previous, next)
+
+Card table byte_map: [0x0000019316670000,0x0000019316e60000] _byte_map_base: 0x0000019312e55000
+
+Marking Bits (Prev, Next): (CMBitMap*) 0x000001930344f010, (CMBitMap*) 0x000001930344f050
+ Prev Bits: [0x0000019317650000, 0x000001931b578000)
+ Next Bits: [0x000001931b580000, 0x000001931f4a8000)
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.012 Loaded shared library D:\Homeng\DevEco Studio\jbr\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff77b7e0000 - 0x00007ff77b7ea000 	D:\Homeng\DevEco Studio\jbr\bin\java.exe
+0x00007ffbf83d0000 - 0x00007ffbf85e7000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffbf6100000 - 0x00007ffbf61c4000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffbf5790000 - 0x00007ffbf5b3d000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffbf5d20000 - 0x00007ffbf5e31000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffbeef90000 - 0x00007ffbeefa7000 	D:\Homeng\DevEco Studio\jbr\bin\jli.dll
+0x00007ffbf7450000 - 0x00007ffbf75fe000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffbe61a0000 - 0x00007ffbe61bb000 	D:\Homeng\DevEco Studio\jbr\bin\VCRUNTIME140.dll
+0x00007ffbf5fe0000 - 0x00007ffbf6006000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffbf7300000 - 0x00007ffbf7329000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffbf5ec0000 - 0x00007ffbf5fd9000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffbf56f0000 - 0x00007ffbf578a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffbd4ed0000 - 0x00007ffbd5163000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955\COMCTL32.dll
+0x00007ffbf7920000 - 0x00007ffbf79c7000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffbf72b0000 - 0x00007ffbf72e1000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffbeefd0000 - 0x00007ffbeefdc000 	D:\Homeng\DevEco Studio\jbr\bin\vcruntime140_1.dll
+0x00007ffb9db00000 - 0x00007ffb9db8d000 	D:\Homeng\DevEco Studio\jbr\bin\msvcp140.dll
+0x00007ffb3cd20000 - 0x00007ffb3d9a3000 	D:\Homeng\DevEco Studio\jbr\bin\server\jvm.dll
+0x00007ffbf7b90000 - 0x00007ffbf7c42000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffbf7600000 - 0x00007ffbf76a9000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffbf6010000 - 0x00007ffbf6038000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ffbf7e20000 - 0x00007ffbf7f34000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffbf44d0000 - 0x00007ffbf451d000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffbe7500000 - 0x00007ffbe7509000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffbf7370000 - 0x00007ffbf73e1000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffbed010000 - 0x00007ffbed01a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffbee4d0000 - 0x00007ffbee504000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffbf44b0000 - 0x00007ffbf44c3000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffbf4760000 - 0x00007ffbf4778000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffbf27c0000 - 0x00007ffbf27ca000 	D:\Homeng\DevEco Studio\jbr\bin\jimage.dll
+0x00007ffbeba60000 - 0x00007ffbebc92000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffbf7fa0000 - 0x00007ffbf832d000 	C:\WINDOWS\System32\combase.dll
+0x00007ffbf61d0000 - 0x00007ffbf62a7000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffbeb6a0000 - 0x00007ffbeb6d2000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffbf5e40000 - 0x00007ffbf5ebb000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffbeed30000 - 0x00007ffbeed55000 	D:\Homeng\DevEco Studio\jbr\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;D:\Homeng\DevEco Studio\jbr\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955;D:\Homeng\DevEco Studio\jbr\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=GBK 
+java_command: D:\Homeng\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\openharmony\toolchains\lib\app_packing_tool.jar --mode hap --force true --lib-path D:\Code\Harmony3\entry\build\default\intermediates\stripped_native_libs\default --json-path D:\Code\Harmony3\entry\build\default\intermediates\package\default\module.json --resources-path D:\Code\Harmony3\entry\build\default\intermediates\res\default\resources --index-path D:\Code\Harmony3\entry\build\default\intermediates\res\default\resources.index --pack-info-path D:\Code\Harmony3\entry\build\default\outputs\default\pack.info --out-path D:\Code\Harmony3\entry\build\default\outputs\default\entry-default-unsigned.hap --ets-path D:\Code\Harmony3\entry\build\default\intermediates\loader_out\default\ets
+java_class_path (initial): D:\Homeng\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\openharmony\toolchains\lib\app_packing_tool.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 266338304                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4238344192                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4238344192                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=D:\Homeng\DevEco Studio\jbr
+PATH=D:\Homeng\DevEco Studio\tools\node;D:\Homeng\DevEco Studio\jbr\bin;D:\APP\chandao\ZenTao\zbox\nssm\win64;C:\Program Files\Common Files\Oracle\Java\javapath;D:\nodejs\node_global;C:\Program Files\Java\jdk-17.0.5\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Program Files (x86)\MySql\mysql-5.7.24-winx64\mysql-5.7.24-winx64\bin;D:\Maven\apache-maven-3.9.6\bin;D:\ProgramData\anaconda3;D:\ProgramData\anaconda3\Scripts;D:\ProgramData\anaconda3\Library\bin;D:\ProgramData\anaconda3\Library\mingw-w64\bin;D:\MATLAB\matlab\runtime\win64;D:\MATLAB\matlab\bin;D:\Program Files\nodejs\;D:\Maven\apache-maven-3.9.6\bin;D:\Program Files\GUI\bin;D:\Program Files\Redis\;C:\Program Files\dotnet\;C:\Users\000\AppData\Local\Programs\Python\Python39\Sc;D:\APP\HarmonySDK\10\toolchains\;$NODEJS$\bin;$OHPM$\bin;C:\Users\000\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\000\AppData\Local\Programs\Python\Python39\;C:\Users\000\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\000\AppData\Local\Programs\Python\Python38\;C:\Users\000\AppData\Local\Microsoft\WindowsApps;D:\pycharm\PyCharm Community Edition 2022.3\bin;;D:\IDEA\IntelliJ IDEA Educational Edition 2022.2.2\bin;;D:\Program Files\IntelliJ IDEA 2022.3.3\bin;;D:\Program Files\PyCharm 2023.1.1\bin;;C:\Program Files (x86)\Tencent\QQGameTempest\Hall.57986\;D:\Program Files (x86)\Microsoft VS Code\bin;D:\Program Files (x86)\CLion 2023.3.4\bin;;C:\Users\000\AppData\Roaming\npm
+USERNAME=000
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 140 Stepping 2, GenuineIntel
+TMP=C:\Users\000\AppData\Local\Temp
+TEMP=C:\Users\000\AppData\Local\Temp
+
+
+
+Periodic native trim disabled
+
+JNI global refs:
+JNI global refs: 0, weak refs: 0
+
+JNI global refs memory usage: 0, weak refs: 0
+
+OOME stack traces (most recent first):
+Classloader memory used:
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.3958)
+OS uptime: 10 days 23:53 hours
+Hyper-V role detected
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 140 stepping 2 microcode 0x22, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, avx512f, avx512dq, avx512cd, avx512bw, avx512vl, sha, fma, vzeroupper, avx512_vpopcntdq, avx512_vpclmulqdq, avx512_vaes, avx512_vnni, clflush, clflushopt, clwb, avx512_vbmi2, avx512_vbmi, hv
+Processor Information for all 8 processors :
+  Max Mhz: 3187, Current Mhz: 3187, Mhz Limit: 3187
+
+Memory: 4k page, system-wide physical 16167M (905M free)
+TotalPageFile size 31527M (AvailPageFile size 243M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 60M, peak: 314M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.10+1-b1087.17) for windows-amd64 JRE (17.0.10+1-b1087.17), built on 2024-01-19 by "builduser" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.

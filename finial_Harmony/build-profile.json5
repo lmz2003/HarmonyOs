@@ -1,0 +1,49 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\lmz\\.ohos\\config\\default_Unbeatify_Harmony_OMCu5mfpKpYGq_frgjep4sSsdAfT6jPxoqYiXcgTQIo=.cer",
+          "storePassword": "0000001B53E8429E8D0FE5033F038050A6AC85DC1E4EA2F24448FEBC1D33A0937DC390F872C0DE115ECEB7",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001BE3519E1E62A9FF58EDCF262BA86405A5DEFBF7FF1042A1E5E024D6050C75426ACA90B60DD45C02",
+          "profile": "C:\\Users\\lmz\\.ohos\\config\\default_Unbeatify_Harmony_OMCu5mfpKpYGq_frgjep4sSsdAfT6jPxoqYiXcgTQIo=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\lmz\\.ohos\\config\\default_Unbeatify_Harmony_OMCu5mfpKpYGq_frgjep4sSsdAfT6jPxoqYiXcgTQIo=.p12"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "5.0.0(12)",
+        "runtimeOS": "HarmonyOS"
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

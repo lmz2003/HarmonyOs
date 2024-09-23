@@ -1,0 +1,13 @@
+{
+  "src": [
+    "pages/IndexPhone",
+    "pages/LoginPageTablet",
+    "pages/IndexTablet",
+    "pages/ImagePreviewPhone",
+    "pages/ImagePreviewTablet",
+    "pages/HistoryPagePhone",
+    "pages/HistoryPageTablet",
+    "pages/LoginPagePhone"
+
+  ]
+}
